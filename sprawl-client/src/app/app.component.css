@@ -1,0 +1,35 @@
+/* Application-wide Styles */
+h1 {
+    color: #F0F4F7;
+    font-family: robotolight;
+    font-size: 250%;
+    margin: 0.75em;
+    letter-spacing: 3px;
+}
+
+html {
+    margin: 0em;
+    padding: 0em;
+}
+ 
+body {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    background-color: #1B2A33;
+}
+
+#version-lbl {
+    margin-top: 50px;
+    opacity: 0.4;
+    font-size: 75%;
+    font-family: robotolight;
+    color: #59717F;
+}
+
+
+.iamselectedroute {
+    display: none;
+}
