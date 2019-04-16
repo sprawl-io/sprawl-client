@@ -1,0 +1,18 @@
+<body>
+    <div class="background">
+        <div id="login-modal" class="content">
+            <h1>sprawl</h1>
+            <div class="container">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <input type="text" placeholder="Enter Username" formControlName="username" name="username" required>
+        
+                  <input id="password-input" type="password" placeholder="Enter Password" formControlName="password" name="password" required>
+          
+                  <input type="submit" value="Login" id="login-btn">
+              </form>
+            </div> 
+            
+            <p id="version-lbl">sprawl alpha build v0.0.1a</p>
+        </div>
+      </div>
+</body>
