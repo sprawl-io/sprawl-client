@@ -1,3 +1,29 @@
-<p>
-  landing works!
-</p>
+<body>
+  <header class="header">
+        <div class="nav">
+            <div id="navLeft">
+                <a class="navbar-left"><img src="../../assets/images/sprawl-logo.png" id="logo"></a>
+                <a><p id="logo-text">sprawl</p></a>
+            </div>
+        </div>
+        <div id="navRight">
+            <button id="ctaButton" [routerLink]="['/login']">Login</button>
+        </div>
+  </header>
+  <div class="background">
+    <div class="content">
+      <h1 id="title">sprawl</h1>
+      <hr>
+      <p id="subline">
+          boostrapping productivity 
+      </p>
+
+      <div id="mainHero">
+          <img src="../../assets/images/Desktop-view.png" alt="Desktop" id="desktop" width="570px">
+          <img src="../../assets/images/Tablet-view.png" alt="Tablet" id="tablet" width="216px">
+          <img src="../../assets/images/Mobile-view-w.png" alt="Mobile" id="mobile" width="72px">
+      </div>
+
+    </div>
+  </div>
+</body>
