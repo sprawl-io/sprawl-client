@@ -1,0 +1,300 @@
+
+/* ------------------------------------------------------------------ */
+/* Reset
+/* ------------------------------------------------------------------ */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Tags
+/* ------------------------------------------------------------------ */
+body {
+    font-family: robotolight;
+    color: #253039;
+
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    background-color: #E3E4E5;
+}
+
+hr {
+    margin: 10px 0px 10px 0px;
+}
+
+a {
+    color: #FFFFFF;
+}
+
+a:hover{   
+    text-decoration: none;
+    color: white;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 20pt;
+}
+
+table {
+    width: 99%;
+    border-collapse: collapse;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    color: rgba(0,0,0,.4);
+    font-size: 10pt;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+th {
+    border-bottom: 1px solid #ddd;
+    color: rgba(0,0,0,.8);
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 10px;
+    font-size: 12pt;
+    font-weight: 400;
+}
+
+tr {
+    width: 100%;
+}
+
+tr:hover {
+    background-color: #f5f5f5
+}
+
+button:focus {
+    outline:0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Classes
+/* ------------------------------------------------------------------ */
+.background {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.content {
+    width: 100%;
+    height: 700px;
+
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+}
+
+/* Header */
+.header {
+	min-height: 60px;
+    color: #253039;
+}
+
+.header a{
+    color: #253039;
+}
+
+.header .site-title a {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 1.33px;
+    margin: 0;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+.header .nav {
+    float: left;
+    list-style: none;
+}
+
+.header .nav li { 
+    display: inline-block; 
+}
+
+
+/* ------------------------------------------------------------------ */
+/* IDs
+/* ------------------------------------------------------------------ */
+
+#title {
+    font-family: roboto;
+    letter-spacing: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 36pt;
+}
+
+#subline {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 16pt;
+    font-weight: 100;
+    line-height: 120%;
+    max-width: 80%;
+}
+
+#sponsor {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 10pt;
+    font-weight: 100;
+    line-height: 100%;
+    max-width: 80%;
+    margin-bottom: 25px;
+    margin-top: -5px;
+}
+
+#mainHero {
+    margin-top: 50px;
+    position: relative;
+}
+
+#version-lbl {
+    margin-top: 50px;
+    opacity: 0.4;
+    font-size: 75%;
+}
+
+#desktop {
+    position: absolute;
+    left: 50%;
+    margin-left: -285px;
+    z-index: 1;
+    
+    -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .05s both;
+	-moz-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .05s both;
+	animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .05s both;
+}
+
+#tablet {
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: 160px;
+    z-index: 2;
+    
+    -webkit-animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .1s both;
+	-moz-animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .1s both;
+	animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .1s both;
+
+}
+
+#mobile {
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+    margin-top: 280px;
+    z-index: 3;
+ 
+    -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .12s both;
+	-moz-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .12s both;
+	animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .12s both;
+}
+
+#ctaButton {
+    background: linear-gradient(270deg, #66BEF9, #1E2A32);
+    background-size: 400% 400%;
+    -webkit-animation: gradientshift 20s ease infinite;
+    -moz-animation: gradientshift 20s ease infinite;
+    animation: gradientshift 20s ease infinite;    
+    
+    width: auto;    
+    padding: 10px 48px;
+    color: #FFFFFF;
+    border: transparent;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 15px 0px 0px 0px;
+    border-radius: 4px;
+}
+
+#ctaButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #dd2c2c;
+    color: #FFFFFF;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    cursor: pointer;
+}
+
+
+#navLeft {
+    float: left;
+    align-content: center;
+    margin: 12px 12px 12px 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#navRight {
+    margin-right: 12px;
+    float:right;
+}
+
+#logo {
+    float: left;
+    max-height: 40px;
+    margin-top: -5px;
+    padding: 0px;
+    filter: grayscale(100%);
+}
+
+#logo-text {
+    display: inline-block;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 400;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Animations
+/* ------------------------------------------------------------------ */
+
+/* Background Color Gradient */
+@-webkit-keyframes gradientshift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientshift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientshift { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+@-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+@-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}

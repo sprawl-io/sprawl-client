@@ -1,0 +1,9 @@
+<ul *ngIf="currentRoute() !== '/login' && currentRoute() !== '/' && currentRoute() !== '/main'" >
+    <li routerLinkActive="iamselectedroute"><a [routerLink]="['/']">Root</a></li>
+    <li routerLinkActive="iamselectedroute" *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
+    <li routerLinkActive="iamselectedroute"><a [routerLink]="['/main']">Main</a></li>
+    <li routerLinkActive="iamselectedroute" *ngIf="isLoggedIn()"><a [routerLink]="['/logout']">Logout</a></li>
+</ul>
+<main [@routerTransition]="getPageTransition(routerOutlet)">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+</main>
