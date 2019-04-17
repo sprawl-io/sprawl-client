@@ -11,6 +11,7 @@ import { LoggedInGuardService } from './logged-in.guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LogoutComponent } from './logout/logout.component';
     LandingComponent,
     MainComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
