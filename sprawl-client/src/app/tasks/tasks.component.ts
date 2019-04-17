@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
-import { TASKS } from './mock-tasks';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-tasks',
@@ -9,11 +9,16 @@ import { TASKS } from './mock-tasks';
 })
 export class TasksComponent implements OnInit {
 
-  tasks = TASKS;
+  tasks: Task[];
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+    this.getTasks();
+  }
+
+  getTasks(): void {
+    this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
   }
 
   getProgressPercent(task: Task) {

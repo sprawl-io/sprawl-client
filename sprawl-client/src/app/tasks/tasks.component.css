@@ -24,14 +24,14 @@
 }
 
 .body {
-    font-family: robotothin;
+    font-family: robotolight;
     font-size: 16px;
     color: #F0F4F7;
     margin-top: 2px;
 }
 
 .tags {
-    font-family: robotothin;
+    font-family: robotolight;
     font-size: 12px;
     color: #748B99;
     margin-top: 1px;
@@ -44,7 +44,7 @@
 }
 
 .perf-msg {
-    font-family: robotothin;
+    font-family: robotolight;
     font-size: 12px;
     color: #748B99;
     margin-top: 1px;
@@ -60,7 +60,7 @@
 
 /* Button Styling */
 .finish-btn {
-    max-width: 60%;
+    max-width: 55%;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -71,7 +71,7 @@
 }
 
 .control-btn {
-    max-width: 60%;
+    max-width: 55%;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -81,7 +81,7 @@
 }
 
 .detail-btn {
-    max-width: 60%;
+    max-width: 55%;
     cursor: pointer;
     transition: 0.3s;
 }

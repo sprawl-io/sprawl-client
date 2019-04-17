@@ -8,7 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { LoggedInGuardService } from './logged-in.guard.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { TasksComponent } from './tasks/tasks.component';
