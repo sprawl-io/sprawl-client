@@ -9,16 +9,44 @@ import { TaskService } from '../task.service';
 })
 export class TasksComponent implements OnInit {
 
-  tasks: Task[];
+  tasks: Task[] = [];
 
-  constructor(private taskService: TaskService) { }
-
-  ngOnInit() {
-    this.getTasks();
+  constructor(private taskService: TaskService) {
+    this.controlTask = this.controlTask.bind(this);
+    this.finishTask = this.finishTask.bind(this);
+    this.setTasks = this.setTasks.bind(this);
+    this.getTasks = this.getTasks.bind(this);
   }
 
-  getTasks(): void {
-    this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
+  ngOnInit() {
+    this.taskService.getTasks().subscribe(this.setTasks);
+  }
+
+  getTasks() {
+    this.taskService.getTasks();
+  }
+
+  setTasks(tasks) {
+    this.tasks = tasks;
+  }
+
+  controlTask(id: string, lastWorkStartAt: string) {
+    if (lastWorkStartAt == null) {
+      this.taskService.startTask(id).subscribe(res => {
+        this.getTasks();
+      });
+    } else {
+      this.taskService.stopTask(id).subscribe(res => {
+        this.getTasks();
+      });
+    }
+  }
+
+  finishTask(id: string) {
+    const getTasks = this.getTasks;
+    this.taskService.finishTask(id).subscribe(res => {
+      getTasks();
+    });
   }
 
   getProgressPercent(task: Task) {

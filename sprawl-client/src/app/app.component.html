@@ -1,4 +1,4 @@
-<ul *ngIf="currentRoute() !== '/login' && currentRoute() !== '/' && currentRoute() !== '/main'" >
+<ul *ngIf="currentRoute() !== '/login' && currentRoute() !== '/' && currentRoute() !== '/main' && currentRoute() !== '/main/create'" >
     <li routerLinkActive="iamselectedroute"><a [routerLink]="['/']">Root</a></li>
     <li routerLinkActive="iamselectedroute" *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
     <li routerLinkActive="iamselectedroute"><a [routerLink]="['/main']">Main</a></li>
