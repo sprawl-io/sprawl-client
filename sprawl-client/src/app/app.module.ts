@@ -12,7 +12,7 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { TasksComponent } from './tasks/tasks.component';
-import { CreateComponent } from './main/create/create.component';
+import { TaskComponent } from './tasks/task/task.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { CreateComponent } from './main/create/create.component';
     LoginComponent,
     LogoutComponent,
     TasksComponent,
-    CreateComponent
+    TaskComponent,
   ],
   imports: [
     BrowserModule,

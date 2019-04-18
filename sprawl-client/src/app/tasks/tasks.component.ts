@@ -1,21 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
 import { TaskService } from '../task.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.css']
+  styleUrls: ['./tasks.component.css'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({transform: 'translateX(-100%)'}),
+        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
+      ])
+    ])
+  ]
 })
 export class TasksComponent implements OnInit {
 
   tasks: Task[] = [];
 
   constructor(private taskService: TaskService) {
-    this.controlTask = this.controlTask.bind(this);
-    this.finishTask = this.finishTask.bind(this);
     this.setTasks = this.setTasks.bind(this);
     this.getTasks = this.getTasks.bind(this);
+    this.createTask = this.createTask.bind(this);
+    this.deleteTaskWithId = this.deleteTaskWithId.bind(this);
+    this.updateTaskWithId = this.updateTaskWithId.bind(this);
   }
 
   ngOnInit() {
@@ -28,56 +41,45 @@ export class TasksComponent implements OnInit {
 
   setTasks(tasks) {
     this.tasks = tasks;
-  }
-
-  controlTask(id: string, lastWorkStartAt: string) {
-    if (lastWorkStartAt == null) {
-      this.taskService.startTask(id).subscribe(res => {
-        this.getTasks();
+    this.tasks.forEach(e => {
+      this.taskService.bindParamTask(e.taskId).subscribe(task => {
+        this.updateTaskWithId(e.taskId, task);
       });
-    } else {
-      this.taskService.stopTask(id).subscribe(res => {
-        this.getTasks();
-      });
-    }
-  }
-
-  finishTask(id: string) {
-    const getTasks = this.getTasks;
-    this.taskService.finishTask(id).subscribe(res => {
-      getTasks();
     });
   }
 
-  getProgressPercent(task: Task) {
-      return (task.workedTime / task.expDuration).toFixed(2) + '%';
-  }
-
-  getPerformancePercent(task: Task) {
-      const performance = 100.00 - (task.workedTime / task.expDuration);
-      let msg = performance.toFixed(2);
-
-      if (performance < 0) {
-        msg += '% slower than expected';
-      } else {
-        msg += '% faster than expected';
+  deleteTaskWithId(id: string) {
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (this.tasks[i].taskId === id) {
+        this.tasks.splice(i, 1);
+        return;
       }
-
-      return msg;
+    }
   }
 
-  isOvertime(task: Task) {
-      if (task.workedTime <= task.expDuration ) {
-          return false;
-      } else {
-          return true;
+  updateTaskWithId(id: string, task: Task) {
+    if (typeof task === 'undefined') {
+      return;
+    }
+
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (this.tasks[i].taskId === id) {
+        this.tasks[i] = Object.assign(this.tasks[i], task);
+        return;
       }
-  }
-  parseISOString(s) {
-    const b = s.split(/\D+/);
-    const date = new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
-    return 'Last Worked on ' + date.toLocaleString();
+    }
   }
 
+  updateTask(id: string) {
+    this.taskService.getParamTask(id);
+  }
 
+  createTask() {
+    this.taskService
+      .createTask('Demo this application to the class', 'Just do it', ['homework'], 50, 0)
+      .subscribe(res => {
+        this.tasks.unshift(res);
+        this.ngOnInit();
+    });
+  }
 }

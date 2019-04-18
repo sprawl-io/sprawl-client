@@ -1,28 +1,6 @@
 <ul class="tasks">
-  <li *ngFor="let task of tasks" class="task">
-    <div class="row">
-      <div class="finish">
-        <img (click)="finishTask(task.taskId)" src="../../assets/main/finish-btn.png" class="finish-btn">
-      </div>
-      <div class="desc">
-          <div class="title">{{(task.title.length>30)? (task.title | slice:0:30)+'..':(task.title)}}</div>
-          <div class="body">{{(task.body.length>30)? (task.body | slice:0:30)+'..':(task.body)}}</div>
-          <div class="tags"><span>Tags: </span>{{task.tags.join(', ')}}</div>
-      </div>
-      <div class="data">
-        <div class="progress-msg">{{ getProgressPercent(task) }}</div>
-        <div class="perf-msg" [ngClass]="{
-          'undertime': task.workedTime <= task.expDuration,
-          'overtime': task.workedTime > task.expDuration
-        }">{{ getPerformancePercent(task) }}</div>
-        <div class="perf-msg"> {{ parseISOString(task.updatedAt) }} </div>
-      </div>
-      <div class="controls">
-          <img (click)="controlTask(task.taskId, task.lastWorkStartAt)" src="../../assets/main/control-btn.png" class="control-btn">
-        </div>
-      <div class="details">
-          <img src="../../assets/main/detail-btn.png" class="detail-btn">
-        </div>
-    </div>
+  <li *ngFor="let task of tasks" class="task" [@slideInOut]>
+    <app-task [task]="task" (onUpdate)="updateTask($event)" (onDelete)="deleteTaskWithId($event)"></app-task>
   </li>
 </ul>
+<button (click)="createTask()" id="newTask">+</button>

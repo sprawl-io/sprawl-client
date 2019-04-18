@@ -10,9 +10,33 @@ export class TaskService {
 
   private tasksUrl = 'http://localhost:8080/api/task/';
   readonly getTasksObservable: BehaviorSubject<Task[]>;
+  readonly getParamTaskObservable: Map<string, BehaviorSubject<Task>>;
 
   constructor(private http: HttpClient) {
     this.getTasksObservable = new BehaviorSubject<Task[]>([]);
+    this.getParamTaskObservable = new Map<string, BehaviorSubject<Task>>();
+  }
+
+  bindParamTask(id: string): BehaviorSubject<Task> {
+    if (!this.getParamTaskObservable.has(id)) {
+      this.getParamTaskObservable.set(id, new BehaviorSubject<Task>(undefined));
+    }
+    return this.getParamTaskObservable.get(id);
+  }
+
+  getParamTask(id: string): Observable<Task> {
+    const obs = this.bindParamTask(id);
+    this._getParamTask(id).subscribe(e => obs.next(e));
+    return obs;
+  }
+
+  _getParamTask(id: string): Observable<Task> {
+    return this.http.get<Task>(this.tasksUrl + id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth_token')
+      }
+    });
   }
 
   getTasks(): Observable<Task[]> {
@@ -35,7 +59,7 @@ export class TaskService {
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('auth_token')
       },
-      observe: 'response' as body
+      observe: 'response'
     }).map((resp: any): boolean => {
       if (resp.status === 200) {
         return true;
@@ -51,7 +75,7 @@ export class TaskService {
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('auth_token')
       },
-      observe: 'response' as body
+      observe: 'response'
     }).map((resp: any): boolean => {
       if (resp.status === 200) {
         return true;
@@ -67,13 +91,29 @@ export class TaskService {
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('auth_token')
       },
-      observe: 'response' as body
+      observe: 'response'
     }).map((resp: any): boolean => {
+      console.log(resp);
       if (resp.status === 200) {
         return true;
       } else {
         return false;
       }
+    });
+  }
+
+  createTask(title: string, body: string, tags: string[], expDuration: number, workedTime: number): Observable<Task> {
+    return this.http.post<Task>(this.tasksUrl, {
+      'title': title,
+      'body': body,
+      'expDuration': expDuration,
+      'workedTime': workedTime,
+      'tags': tags
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth_token')
+      },
     });
   }
 }
