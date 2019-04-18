@@ -1,0 +1,121 @@
+/* Text Styling */
+.title {
+    font-family: robotolight;
+    font-size: 22px;
+    color: #F0F4F7;
+}
+
+.body {
+    font-family: robotolight;
+    font-size: 16px;
+    color: #F0F4F7;
+    margin-top: 2px;
+}
+
+.tags {
+    font-family: robotolight;
+    font-size: 12px;
+    color: #748B99;
+    margin-top: 1px;
+}
+
+.progress-msg {
+    font-family: robotolight;
+    font-size: 28px;
+    color: #F0F4F7;
+}
+
+.perf-msg {
+    font-family: robotolight;
+    font-size: 12px;
+    color: #748B99;
+    margin-top: 1px;
+}
+
+.undertime {
+    color: #5CB367;
+}
+
+.overtime {
+    color: #F15854;
+}
+
+/* Button Styling */
+.finish-btn {
+    max-width: 55%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.finish-btn:hover {
+    background: #59717F;
+
+}
+
+.control-btn {
+    max-width: 55%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-btn:hover {
+    filter: brightness(1.5);
+}
+
+.detail-btn {
+    max-width: 55%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.detail-btn:hover {
+    filter: brightness(1.5);
+}
+
+/* Inner Divs */
+/* Parent */
+.row {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Children */
+.finish {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 15px 0px 0px;
+}
+
+.desc {
+    width: 55%;
+    border-right: solid #59717F 1px;
+    margin-right: 1%;
+    align-items: center;
+}
+
+.data {
+    width: 30%;
+    align-items: center;
+    margin: 0px 0px 0px 5px;
+
+}
+
+.controls {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px 15px;
+}
