@@ -12,13 +12,21 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainComponent,
+    canActivate: [ LoggedInGuardService ],
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'main/create',
+    component: MainComponent,
     canActivate: [ LoggedInGuardService ]
   },
   { path: 'logout', component: LogoutComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: 'reload'
+  })],
   exports: [RouterModule]
 })
 

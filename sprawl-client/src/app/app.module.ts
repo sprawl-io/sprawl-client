@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './tasks/task/task.component';
+import { TaskFormComponent } from './tasks/task-form/task-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TaskComponent } from './tasks/task/task.component';
     LogoutComponent,
     TasksComponent,
     TaskComponent,
+    TaskFormComponent,
   ],
   imports: [
     BrowserModule,

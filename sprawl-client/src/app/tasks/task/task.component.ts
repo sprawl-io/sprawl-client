@@ -10,7 +10,9 @@ import { TaskService } from 'src/app/task.service';
 export class TaskComponent implements OnInit {
 
   @Input() task: Task = null;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onUpdate: EventEmitter<string>;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onDelete: EventEmitter<string>;
 
   constructor(private taskService: TaskService) {

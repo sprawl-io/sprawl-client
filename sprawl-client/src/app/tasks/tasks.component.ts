@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
 import { TaskService } from '../task.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -10,8 +11,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [
     trigger('slideInOut', [
       transition(':enter', [
-        style({transform: 'translateX(-100%)'}),
-        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+        // style({transform: 'translateX(-100%)'}),
+        animate('1ms ease-in', style({transform: 'translateX(0%)'}))
       ]),
       transition(':leave', [
         animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
@@ -23,7 +24,7 @@ export class TasksComponent implements OnInit {
 
   tasks: Task[] = [];
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, public router: Router) {
     this.setTasks = this.setTasks.bind(this);
     this.getTasks = this.getTasks.bind(this);
     this.createTask = this.createTask.bind(this);
@@ -74,12 +75,12 @@ export class TasksComponent implements OnInit {
     this.taskService.getParamTask(id);
   }
 
-  createTask() {
+  createTask(title: string, body: string, tags: string[], expDuration: number, workedTime: number) {
     this.taskService
-      .createTask('Demo this application to the class', 'Just do it', ['homework'], 50, 0)
+      .createTask(title, body, tags, expDuration, workedTime)
       .subscribe(res => {
         this.tasks.unshift(res);
-        this.ngOnInit();
+        this.getTasks();
     });
   }
 }
