@@ -39,3 +39,23 @@
 #newTask:hover {
     background-color: #5DA5DA;
 }
+
+/* Animations */
+.active {
+    background-color: #2F3F4B;
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color {
+    0% {
+        background-color: #2F3F4B;
+    }
+    50% {
+        background-color: #5DA5DA;
+    }
+    100% {
+        background-color: #2F3F4B;
+    }
+}

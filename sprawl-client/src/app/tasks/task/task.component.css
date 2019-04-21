@@ -42,20 +42,22 @@
 
 /* Button Styling */
 .finish-btn {
-    max-width: 55%;
+    min-width: 10px;
+    max-width: 50%;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .finish-btn:hover {
     background: #59717F;
-
 }
 
 .control-btn {
-    max-width: 55%;
+    min-width: 10px;
+    max-width: 50%;
     cursor: pointer;
     transition: 0.3s;
+    padding-left: 5%;
 }
 
 .control-btn:hover {
@@ -63,7 +65,8 @@
 }
 
 .detail-btn {
-    max-width: 55%;
+    min-width: 10px;
+    max-width: 50%;
     cursor: pointer;
     transition: 0.3s;
 }

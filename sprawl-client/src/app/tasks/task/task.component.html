@@ -13,9 +13,9 @@
     <div class="perf-msg"> {{ parseISOString(task.updatedAt) }} </div>
   </div>
   <div class="controls">
-    <img (click)="controlTask(task.taskId, task.lastWorkStartAt)" src="../../assets/main/control-btn.png" class="control-btn">
+    <img (click)="controlTask(task.taskId, task.lastWorkStartAt)" src="../../assets/main/control-btn.png" [src]="task.lastWorkStartAt != null ? '../../assets/main/control-btn-white.png' : '../../assets/main/control-btn.png' " class="control-btn">
     </div>
   <div class="details">
-    <img src="../../assets/main/detail-btn.png" class="detail-btn">
+    <img (click)="deleteTask(task.taskId)" src="../../assets/main/delete-btn.png" class="detail-btn">
   </div>
 </div>
