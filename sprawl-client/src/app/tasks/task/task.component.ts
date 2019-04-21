@@ -49,6 +49,11 @@ export class TaskComponent implements OnInit {
     this.taskService.finishTask(id).subscribe(_ => remove());
   }
 
+  deleteTask(id: string) {
+    const remove = this.remove;
+    this.taskService.deleteTask(id).subscribe(_ => remove());
+  }
+
   getProgressPercent(task: Task) {
     return (100 * (task.workedTime / task.expDuration)).toFixed(2) + '%';
   }
@@ -79,6 +84,6 @@ export class TaskComponent implements OnInit {
   parseISOString(s) {
     const b = s.split(/\D+/);
     const date = new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
-    return 'Last Worked on ' + date.toLocaleString();
+    return 'Last Worked ' + date.toLocaleString();
   }
 }

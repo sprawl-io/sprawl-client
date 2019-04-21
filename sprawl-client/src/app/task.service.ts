@@ -102,6 +102,23 @@ export class TaskService {
     });
   }
 
+  deleteTask(id: string): Observable<boolean> {
+    return this.http.delete(this.tasksUrl + id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth_token')
+      },
+      observe: 'response'
+    }).map((resp: any): boolean => {
+      console.log(resp);
+      if (resp.status === 200) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
   createTask(title: string, body: string, tags: string[], expDuration: number, workedTime: number): Observable<Task> {
     return this.http.post<Task>(this.tasksUrl, {
       'title': title,

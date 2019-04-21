@@ -47,7 +47,7 @@ export class AppComponent {
       }
 
       if (transitionName === 'none') {
-        transitionName = 'initial';
+        transitionName = 'forward';
       }
 
       this.previousPath = path;
