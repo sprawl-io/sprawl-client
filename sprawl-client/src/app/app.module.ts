@@ -14,6 +14,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { TaskFormComponent } from './tasks/task-form/task-form.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TaskFormComponent } from './tasks/task-form/task-form.component';
     TasksComponent,
     TaskComponent,
     TaskFormComponent,
+    AnalyticsComponent,
   ],
   imports: [
     BrowserModule,

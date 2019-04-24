@@ -33,6 +33,7 @@ body, button {
 }
 .icon-menu-box:hover {
     background-color: #2C404C;
+    cursor: pointer;
 }
 
 .profile-menu {

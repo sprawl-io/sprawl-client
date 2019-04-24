@@ -20,6 +20,11 @@ const routes: Routes = [
     component: MainComponent,
     canActivate: [ LoggedInGuardService ]
   },
+  {
+    path: 'main/analytics',
+    component: MainComponent,
+    canActivate: [ LoggedInGuardService ]
+  },
   { path: 'logout', component: LogoutComponent }
 ];
 
