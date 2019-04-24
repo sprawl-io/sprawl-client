@@ -8,9 +8,12 @@ import { LandingComponent } from './landing/landing.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { LoggedInGuardService } from './logged-in.guard.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskComponent } from './tasks/task/task.component';
+import { TaskFormComponent } from './tasks/task-form/task-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { LogoutComponent } from './logout/logout.component';
     LandingComponent,
     MainComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    TasksComponent,
+    TaskComponent,
+    TaskFormComponent,
   ],
   imports: [
     BrowserModule,
