@@ -67,21 +67,50 @@
 
   <br>
   <div class="row">
-    <p>
+    <div class="graph-container">
+      <ngx-charts-line-chart
+        [scheme]="cool"
+        [results]="tsEstData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="tsEstDataX"
+        [yAxisLabel]="tsEstDataY"
+        [autoScale]="autoScale"
+        [showGridLines]="showGridLines"
+        [trimXAxisTicks]="trimXAxisTicks"
+        [maxXAxisTickLength]="maxXAxisTickLength"
+        (select)="onSelect($event)">
+      </ngx-charts-line-chart>
+    </div>
 
-    {{ data.taskEstPts | json}}
-
-    </p>
+    <div class="graph-container">
+      <ngx-charts-line-chart
+        [scheme]="cool"
+        [results]="tsTotalData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="tsTotalDataX"
+        [yAxisLabel]="tsTotalDataY"
+        [autoScale]="autoScale"
+        [showGridLines]="showGridLines"
+        [trimXAxisTicks]="trimXAxisTicks"
+        [maxXAxisTickLength]="maxXAxisTickLength"
+        (select)="onSelect($event)">
+      </ngx-charts-line-chart>
+    </div>
   </div>
 
   <br>
 
   <div class="row">
-    <p>
 
-    {{ data.totalPts | json}}
-
-    </p>
   </div>
 </div>
-
