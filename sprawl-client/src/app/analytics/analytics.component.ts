@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-analytics',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnalyticsComponent implements OnInit {
 
-  constructor() { }
+  private tasksUrl = 'http://localhost:8080/api/task/stats';
+
+  private data : any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getStats();
   }
+
+  getStats() {
+    this.http.get(this.tasksUrl, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth_token')
+      }
+    }).subscribe(e => this.data = e);
+  }
+
+  getDifferencePercentage(x: number, y: number): number {
+      return (Math.abs(x - y)/((x + y)/2))*100;
+  }
+
 
 }
