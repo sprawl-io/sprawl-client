@@ -28,10 +28,16 @@
     width: 50%;
     background: #2C404C;
     padding: 15px 0px 15px 0px;
-
+    height: auto;
     transition: 0.2s;
 }
 
+.graph-container-wide {
+    width: 100%;
+    background: #2C404C;
+    padding: 15px 0px 15px 0px;
+    transition: 0.2s;
+}
 .wide {
     float: left;
     width: 100%;

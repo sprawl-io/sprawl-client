@@ -11,7 +11,7 @@
         <br>
         <span *ngIf="data.todaysWorkedTime > data.avgDailyTaskTime" class="majorSubStat positive">+</span>
         <span *ngIf="data.todaysWorkedTime < data.avgDailyTaskTime" class="majorSubStat negative">-</span>
-        <span class="majorSubStat" [ngClass]="data.todaysWorkedTime > data.avgWorkedTime ? 'positive' : 'negative'" >{{ getDifferencePercentage(data.todaysWorkedTime, data.avgDailyTaskTime).toFixed(2)  }}
+        <span class="majorSubStat" [ngClass]="data.todaysWorkedTime > data.avgDailyTaskTime ? 'positive' : 'negative'" >{{ getDifferencePercentage(data.todaysWorkedTime, data.avgDailyTaskTime).toFixed(2)  }}
 % from average</span>
       </div>
 
@@ -66,6 +66,28 @@
   </div>
 
   <br>
+    <div class="row">
+      <div class="graph-container-wide">
+        <ngx-charts-line-chart
+        [scheme]="cool"
+        [results]="tsEstDataTags"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="true"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="tsEstDataX"
+        [yAxisLabel]="tsEstDataY"
+        [autoScale]="autoScale"
+        [showGridLines]="showGridLines"
+        [trimXAxisTicks]="6"
+        [maxXAxisTickLength]="maxXAxisTickLength"
+        (select)="onSelect($event)">
+        </ngx-charts-line-chart>  
+      </div>
+  </div>
+  <br>
   <div class="row">
     <div class="graph-container">
       <ngx-charts-line-chart
@@ -108,9 +130,6 @@
     </div>
   </div>
 
-  <br>
+  
 
-  <div class="row">
-
-  </div>
 </div>

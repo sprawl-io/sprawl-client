@@ -13,6 +13,7 @@ export class AnalyticsComponent implements OnInit {
   private data : any;
   private tsEstData: any;
   private tsTotalData: any;
+  private tsEstDataTags: any;
 
   view: any[] = [700, 400];
 
@@ -48,6 +49,7 @@ export class AnalyticsComponent implements OnInit {
     this.getStats();
     this.getTimeSeriesEstData();
     this.getTimeSeriesTotalData();
+    this.getTimeSeriesEstDataByTag();
   }
 
   getStats() {
@@ -75,6 +77,15 @@ export class AnalyticsComponent implements OnInit {
         'Authorization': localStorage.getItem('auth_token')
       }
     }).subscribe(e => this.tsTotalData = e);
+  }
+
+  getTimeSeriesEstDataByTag() {
+    this.http.get(this.tasksUrl + '/timeseries/estimation/tag', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth_token')
+      }
+    }).subscribe(e => this.tsEstDataTags = e);
   }
 
   getDifferencePercentage(x: number, y: number): number {
