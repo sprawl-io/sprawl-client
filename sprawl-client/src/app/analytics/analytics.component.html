@@ -1,0 +1,135 @@
+<div class="outer">
+  <div class="row">
+    <div class="wide">
+      <div class="wideLeft">
+        <span class="majorSmallLabel">TIME WORKED TODAY</span><br>
+        <span class="majorStat">
+          {{ data.todaysWorkedTime }}         
+          <sup *ngIf="data.todaysWorkedTime > data.avgDailyTaskTime" class="statArrow positive">&#9650;</sup>
+          <sup *ngIf="data.todaysWorkedTime < data.avgDailyTaskTime" class="statArrow negative">&#9660;</sup>
+        </span>
+        <br>
+        <span *ngIf="data.todaysWorkedTime > data.avgDailyTaskTime" class="majorSubStat positive">+</span>
+        <span *ngIf="data.todaysWorkedTime < data.avgDailyTaskTime" class="majorSubStat negative">-</span>
+        <span class="majorSubStat" [ngClass]="data.todaysWorkedTime > data.avgDailyTaskTime ? 'positive' : 'negative'" >{{ getDifferencePercentage(data.todaysWorkedTime, data.avgDailyTaskTime).toFixed(2)  }}
+% from average</span>
+      </div>
+
+      <div class="narrowBlock">
+        <span class="majorStat">
+          {{ data.avgTaskCompletionTime.toFixed(2) }}
+        </span>
+        <br>
+        <span class="majorLabel">AVG. TASK TIME</span><br>
+      </div>
+      <div class="narrowBlock">
+        <span class="majorStat">
+          {{ data.totalOver }}
+        </span>      
+        <br>
+        <span class="majorLabel">OVERTIME</span><br>
+      </div>
+      <div class="narrowBlock">
+        <span class="majorStat">
+          {{ data.totalUnder }}
+        </span>     
+        <br>
+        <span class="majorLabel">UNDERTIME</span><br> 
+      </div>
+      <div class="narrowBlock">
+        <span class="majorStat">
+          {{ data.totalTasks }}
+        </span> 
+        <br>
+        <span class="majorLabel">COMPLETED</span><br>     
+      </div>
+      <div class="narrowBlock">
+        <span class="majorStat">
+          {{ data.avgEstFactor.toFixed(2) }}
+        </span>      
+        <br>
+        <span class="majorLabel">AVG. ACCURACY</span><br>
+      </div>
+      <div class="wideRight">
+        <span class="majorSmallLabel">ACCURACY TODAY</span><br>
+        <span class="majorStat">
+          {{ data.todaysEstFactor.toFixed(3) }}
+          <sup *ngIf="data.todaysEstFactor > data.avgEstFactor" class="statArrow positive">&#9650;</sup>
+          <sup *ngIf="data.todaysEstFactor < data.avgEstFactor" class="statArrow negative">&#9660;</sup>        
+        </span>
+        <br>
+        <span *ngIf="data.todaysEstFactor > data.avgEstFactor" class="majorSubStat positive">+</span>
+        <span *ngIf="data.todaysEstFactor < data.avgEstFactor" class="majorSubStat negative">-</span>
+        <span class="majorSubStat" [ngClass]="data.todaysEstFactor > data.avgEstFactor ? 'positive' : 'negative'" >{{ getDifferencePercentage(data.todaysEstFactor, data.avgEstFactor).toFixed(2)  }}% from average</span>
+      </div>
+    </div>
+  </div>
+
+  <br>
+    <div class="row">
+      <div class="graph-container-wide">
+        <ngx-charts-line-chart
+        [scheme]="cool"
+        [results]="tsEstDataTags"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="true"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="tsEstDataX"
+        [yAxisLabel]="tsEstDataY"
+        [autoScale]="autoScale"
+        [showGridLines]="showGridLines"
+        [trimXAxisTicks]="6"
+        [maxXAxisTickLength]="maxXAxisTickLength"
+        (select)="onSelect($event)">
+        </ngx-charts-line-chart>  
+      </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="graph-container">
+      <ngx-charts-line-chart
+        [scheme]="cool"
+        [results]="tsEstData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="tsEstDataX"
+        [yAxisLabel]="tsEstDataY"
+        [autoScale]="autoScale"
+        [showGridLines]="showGridLines"
+        [trimXAxisTicks]="trimXAxisTicks"
+        [maxXAxisTickLength]="maxXAxisTickLength"
+        (select)="onSelect($event)">
+      </ngx-charts-line-chart>
+    </div>
+
+    <div class="graph-container">
+      <ngx-charts-line-chart
+        [scheme]="cool"
+        [results]="tsTotalData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="tsTotalDataX"
+        [yAxisLabel]="tsTotalDataY"
+        [autoScale]="autoScale"
+        [showGridLines]="showGridLines"
+        [trimXAxisTicks]="trimXAxisTicks"
+        [maxXAxisTickLength]="maxXAxisTickLength"
+        (select)="onSelect($event)">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+
+  
+
+</div>

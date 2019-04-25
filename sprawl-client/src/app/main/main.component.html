@@ -8,7 +8,7 @@
       </div>
     </a>
     <a>
-      <div class="icon-menu-box">
+      <div [routerLink]="['/main/analytics']" class="icon-menu-box">
         <img src="../../assets/main/analytics.png" class="icon-menu">
       </div>
     </a>
@@ -31,7 +31,8 @@
 
   <!-- Page content -->
   <div class="main">
-    <app-tasks></app-tasks>
+    <app-analytics *ngIf="router.url == '/main/analytics'" ></app-analytics>
+    <app-tasks *ngIf="router.url == '/main' || router.url == '/main/create'" ></app-tasks>
   </div>
   
 </body>

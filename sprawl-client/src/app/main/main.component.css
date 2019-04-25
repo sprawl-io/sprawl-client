@@ -30,9 +30,11 @@ body, button {
     text-align: center;
     vertical-align: middle;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    outline: none;
 }
 .icon-menu-box:hover {
     background-color: #2C404C;
+    cursor: pointer;
 }
 
 .profile-menu {
