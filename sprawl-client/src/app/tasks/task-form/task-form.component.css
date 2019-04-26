@@ -1,0 +1,46 @@
+h1 {
+    color: #F0F4F7;
+    font-family: robotolight;
+    font-size: 24px;
+    margin: 0.75em;
+    padding-top: 25px;
+    letter-spacing: 3px;
+}
+
+input[type=text], input[type=number], input[type="string[]"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    color: #888;
+    font-family: robotolight;
+    border-radius: 2px;
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+#create-btn {
+    background-color: #59717F;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+#create-btn:hover {
+    opacity: 0.8;
+    background-color: #5DA5DA;
+}
+
+.container {
+    padding: 0px 24px 0px 24px;
+}
+

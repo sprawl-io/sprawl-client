@@ -1,0 +1,33 @@
+<body>
+  <!-- Side navigation -->
+  <div class="sidenav">
+
+    <a [routerLink]="['/main']">
+      <div class="icon-menu-box">
+          <img src="./assets/main/tasks.png" class="icon-menu">
+      </div>
+    </a>
+    <a>
+      <div [routerLink]="['/main/analytics']" class="icon-menu-box">
+        <img src="./assets/main/analytics.png" class="icon-menu">
+      </div>
+    </a>
+    <a [routerLink]="['/logout']">
+      <div class="icon-menu-box">
+        <img src="./assets/main/logout.png" class="icon-menu">
+      </div>
+    </a>
+    <div class="nav-bottom">
+      <div class="icon-menu-box">
+        <img src="./assets/main/profile.png" class="profile-menu">
+      </div>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="main">
+    <app-analytics *ngIf="router.url == '/main/analytics'" ></app-analytics>
+    <app-tasks *ngIf="router.url == '/main' || router.url == '/main/create'" ></app-tasks>
+  </div>
+  
+</body>

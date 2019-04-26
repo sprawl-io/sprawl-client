@@ -1,0 +1,9 @@
+<app-task-form *ngIf="router.url == '/main/create'"></app-task-form>
+
+<ul *ngIf="router.url == '/main'" class="tasks">
+  <li *ngFor="let task of tasks" class="task" [@slideInOut]>
+    <app-task [task]="task" (onUpdate)="updateTask($event)" (onDelete)="deleteTaskWithId($event)"></app-task>
+  </li>
+</ul>
+
+<button *ngIf="router.url == '/main'" [routerLink]="['/main/create']" id="newTask" (onCreate)="createTask($event)">+</button>

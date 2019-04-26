@@ -1,0 +1,157 @@
+.outer {
+    width: 95%;
+    background-color: #1B2A33;
+    width: auto;
+    padding: 15px;
+    text-align: left;
+    overflow: hidden;
+    margin: 2em;
+}
+
+.blank-outer {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.blank-msg {
+    margin-top: 15%;
+    color: #5D707E;
+    font-size: 20px;
+}
+
+.row {
+    background-color: #2C404C;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;    
+    width: 100%;
+}
+
+.row:hover {
+    -webkit-box-shadow: 0px 0px 5px 6px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0px 0px 5px 6px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         0px 0px 5px 6px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.graph-container {
+    width: 48%;
+    background: #2C404C;
+    padding: 15px 0px 15px 0px;
+    margin: 0% 1% 0% 1%;
+    height: auto;
+    transition: 0.2s;
+}
+
+.graph-container-wide {
+    width: 100%;
+    background: #2C404C;
+    padding: 15px 0px 15px 0px;
+    transition: 0.2s;
+
+}
+.wide {
+    float: left;
+    width: 100%;
+    background: #2C404C;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 0px 15px 0px;
+    transition: 0.2s;
+}
+
+.wideLeft {
+    width: auto;
+    height: auto;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 15px 0px 45px;
+    text-align: center;
+    
+}
+
+.wideRight {
+    width: auto;
+    height: auto;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 45px 0px 15px;
+    text-align: center;
+}
+
+span {
+    float: center;
+}
+
+.majorStat {
+    margin-top: 10px;
+    color: #EAEFF2;
+    font-size: 48px;
+    padding: 10px;
+    vertical-align: sub;
+
+}
+
+.majorLabel {
+    color: #748B99;
+    font-family: robotolight;    
+    font-size: 16px;
+    margin-top: -20px;
+}
+
+.majorSmallLabel {
+    color: #748B99;
+    font-family: robotolight;    
+    font-size: 16px;
+}
+
+.majorSubStat {
+    font-family: roboto;
+    font-size: 14px;
+}
+
+.statArrow {
+    top: 0px;
+    font-size: 20px;
+}
+
+.positive {
+    color: #60BD68;
+
+}
+
+.negative {
+    color: #F15854;
+}
+
+.narrowBlock {
+    width: auto;
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+::ng-deep .ngx-charts text {
+  color: #748B99!important;
+  fill: #748B99!important;
+}
+
+::ng-deep .ngx-charts {
+    font-family: robotolight;
+}
+
+::ng-deep ngx-tooltip-content{
+    font-family: robotolight;
+}

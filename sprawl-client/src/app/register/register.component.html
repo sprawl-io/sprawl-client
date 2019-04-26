@@ -1,0 +1,19 @@
+<body>
+    <div class="background">
+        <div id="create-modal" class="content shake">
+            <h1>Register for Sprawl</h1>
+            <div class="container">
+              <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+                  <input type="text" placeholder="Enter Username" formControlName="username" name="username" required>
+                  <input id="password-input" type="password" placeholder="Enter Password" formControlName="password" name="password" required>
+                      <input type="text" placeholder="Enter Your Name" formControlName="name" name="name" required>
+                  <input type="text" placeholder="Enter E-mail" formControlName="email" name="email" required>      
+                  <input type="submit" value="Submit" id="create-btn">
+              </form>
+            </div> 
+            
+            <p id="version-lbl">sprawl alpha build v0.0.1a</p>
+        </div>
+      </div>
+</body>
+

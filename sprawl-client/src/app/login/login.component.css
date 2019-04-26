@@ -1,0 +1,102 @@
+/* Application-wide Styles */
+h1 {
+    color: #F0F4F7;
+    font-family: robotolight;
+    font-size: 250%;
+    margin: 0.75em;
+    letter-spacing: 3px;
+}
+
+html {
+    margin: 0em;
+    padding: 0em;
+}
+ 
+body {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    background-color: #1B2A33;
+}
+
+body, button {
+    color: #888;
+    font-family: robotolight;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 300px;
+    height: 400px;
+    background-color: #2C404C;
+
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+}
+
+#login-modal {
+
+    background-color: #2C404C;
+    border-radius: 4px;
+
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    color: #888;
+    font-family: robotolight;
+    border-radius: 2px;
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+#login-btn {
+    background-color: #59717F;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+#login-btn:hover {
+    opacity: 0.8;
+    background-color: #5DA5DA;
+}
+
+#version-lbl {
+    margin-top: 50px;
+    opacity: 0.4;
+    font-size: 75%;
+}
+
+.container {
+    padding: 0px 24px 0px 24px;
+}
+
+
