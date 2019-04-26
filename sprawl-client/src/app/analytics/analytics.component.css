@@ -10,8 +10,7 @@
 
 .blank-outer {
     display: flex;
-    width: 100%;
-    min-height: 100%;
+    width: 95%;
     align-items: center;
     justify-content: center;
 
@@ -52,14 +51,13 @@
     width: 100%;
     background: #2C404C;
     padding: 15px 0px 15px 0px;
-    margin-left: 30px;
     transition: 0.2s;
+
 }
 .wide {
     float: left;
     width: 100%;
     background: #2C404C;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
