@@ -1,7 +1,7 @@
 <div class="outer">
   <div class="row">
     <div class="wide">
-      <div class="wideLeft">
+      <div *ngIf="data.todaysWorkedTime != 0" class="wideLeft">
         <span class="majorSmallLabel">TIME WORKED TODAY</span><br>
         <span class="majorStat">
           {{ data.todaysWorkedTime }}         
@@ -50,7 +50,7 @@
         <br>
         <span class="majorLabel">AVG. ACCURACY</span><br>
       </div>
-      <div class="wideRight">
+      <div *ngIf="data.todaysWorkedTime != 0" class="wideRight">
         <span class="majorSmallLabel">ACCURACY TODAY</span><br>
         <span class="majorStat">
           {{ data.todaysEstFactor.toFixed(3) }}

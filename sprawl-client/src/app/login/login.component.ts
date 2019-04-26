@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // e.preventDefault();
 
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
