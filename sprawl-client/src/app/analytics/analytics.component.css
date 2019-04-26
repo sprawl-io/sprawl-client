@@ -8,6 +8,21 @@
     margin: 2em;
 }
 
+.blank-outer {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.blank-msg {
+    margin-top: 15%;
+    color: #5D707E;
+    font-size: 20px;
+}
+
 .row {
     background-color: #2C404C;
     display: flex;
@@ -25,9 +40,10 @@
 }
 
 .graph-container {
-    width: 50%;
+    width: 48%;
     background: #2C404C;
     padding: 15px 0px 15px 0px;
+    margin: 0% 1% 0% 1%;
     height: auto;
     transition: 0.2s;
 }

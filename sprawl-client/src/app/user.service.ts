@@ -16,6 +16,26 @@ export class UserService {
     this.loggedIn = !!localStorage.getItem('auth_token');
   }
 
+  register(username, password, name, email): Observable<boolean> {
+    return this.http.post('//localhost:8080/api/user/register', {
+      'username': username,
+      'password': password,
+      'name': name,
+      'email': email,
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      observe: 'response'
+    }).map((resp: any): boolean => {
+      if (resp.status === 200) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+  }
+
   login(username, password): Observable<boolean> {
 
     const base64Creds = btoa(username + ':' + password);

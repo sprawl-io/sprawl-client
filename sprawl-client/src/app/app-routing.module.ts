@@ -5,10 +5,12 @@ import { LogoutComponent } from './logout/logout.component';
 import { LandingComponent } from './landing/landing.component';
 import { MainComponent } from './main/main.component';
 import { LoggedInGuardService } from './logged-in.guard.service';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'main',
     component: MainComponent,
