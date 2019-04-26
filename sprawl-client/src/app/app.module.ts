@@ -16,6 +16,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { TaskFormComponent } from './tasks/task-form/task-form.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     TaskComponent,
     TaskFormComponent,
     AnalyticsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
