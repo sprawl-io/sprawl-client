@@ -1,9 +1,9 @@
-<div *ngIf="data.totalTasks == 0" class="blank-outer">
+<div *ngIf="data && data.totalTasks == 0" class="blank-outer">
   <div *ngIf="data.totalTasks == 0" class="blank-msg">
     Complete Some Tasks to Start Seeing Your Analytics!
   </div>
 </div>
-<div *ngIf="data.totalTasks != 0" class="outer">
+<div *ngIf="data && data.totalTasks != 0" class="outer">
   <div class="row">
     <div class="wide">
       <div *ngIf="data.todaysWorkedTime != 0" class="wideLeft">
