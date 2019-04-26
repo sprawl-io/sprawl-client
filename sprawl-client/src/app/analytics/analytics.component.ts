@@ -10,10 +10,10 @@ export class AnalyticsComponent implements OnInit {
 
   private tasksUrl = 'http://sprawl.us-east-2.elasticbeanstalk.com/api/task/stats';
 
-  private data : any;
-  private tsEstData: any;
-  private tsTotalData: any;
-  private tsEstDataTags: any;
+  data : any;
+  tsEstData: any;
+  tsTotalData: any;
+  tsEstDataTags: any;
 
   view: any[] = [700, 400];
 

@@ -10,7 +10,6 @@ import { Router, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'sprawl-client';
   version = 'sprawl alpha build v0.0.1a';
-  private previousPath = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
