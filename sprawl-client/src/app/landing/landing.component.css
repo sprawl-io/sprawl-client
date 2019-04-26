@@ -273,6 +273,13 @@ button:focus {
     margin-top: 3px;
 }
 
+#signUp {
+    margin-right: 20px;
+    font-family: robotomedium;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* ------------------------------------------------------------------ */
 /* Animations
 /* ------------------------------------------------------------------ */
