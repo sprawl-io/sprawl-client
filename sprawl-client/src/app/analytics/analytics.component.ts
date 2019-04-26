@@ -8,12 +8,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AnalyticsComponent implements OnInit {
 
-  private tasksUrl = 'http://localhost:8080/api/task/stats';
+  private tasksUrl = 'http://sprawl.us-east-2.elasticbeanstalk.com/api/task/stats';
 
-  private data : any;
-  private tsEstData: any;
-  private tsTotalData: any;
-  private tsEstDataTags: any;
+  data : any;
+  tsEstData: any;
+  tsTotalData: any;
+  tsEstDataTags: any;
 
   view: any[] = [700, 400];
 
@@ -37,7 +37,7 @@ export class AnalyticsComponent implements OnInit {
   tsTotalDataY = 'Tasks Completed'
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#a8385d', '#7aa3e5', '#a27ea8', '#aae3f5', '#adcded', '#a95963', '#8796c0', '#7ed3ed', '#50abcc', '#ad6886']
   };
 
   // line, area

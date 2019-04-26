@@ -1,9 +1,9 @@
-<div *ngIf="data.totalTasks == 0" class="blank-outer">
-  <div class="blank-msg">
+<div *ngIf="data && data.totalTasks == 0" class="blank-outer">
+  <div *ngIf="data.totalTasks == 0" class="blank-msg">
     Complete Some Tasks to Start Seeing Your Analytics!
   </div>
 </div>
-<div *ngIf="data.totalTasks != 0" class="outer">
+<div *ngIf="data && data.totalTasks != 0" class="outer">
   <div class="row">
     <div class="wide">
       <div *ngIf="data.todaysWorkedTime != 0" class="wideLeft">
@@ -71,10 +71,10 @@
   </div>
 
   <br>
-    <div class="row">
+    <div *ngIf="data.totalTasks > 3" class="row">
       <div class="graph-container-wide">
         <ngx-charts-line-chart
-        [scheme]="cool"
+        [scheme]="colorScheme"
         [results]="tsEstDataTags"
         [gradient]="gradient"
         [xAxis]="showXAxis"
@@ -96,7 +96,7 @@
   <div class="row">
     <div class="graph-container">
       <ngx-charts-line-chart
-        [scheme]="cool"
+        [scheme]="colorScheme"
         [results]="tsEstData"
         [gradient]="gradient"
         [xAxis]="showXAxis"
@@ -116,7 +116,7 @@
 
     <div class="graph-container">
       <ngx-charts-line-chart
-        [scheme]="cool"
+        [scheme]="colorScheme"
         [results]="tsTotalData"
         [gradient]="gradient"
         [xAxis]="showXAxis"

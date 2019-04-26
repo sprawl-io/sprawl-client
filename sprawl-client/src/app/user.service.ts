@@ -17,7 +17,7 @@ export class UserService {
   }
 
   register(username, password, name, email): Observable<boolean> {
-    return this.http.post('//localhost:8080/api/user/register', {
+    return this.http.post('http://sprawl.us-east-2.elasticbeanstalk.com/api/user/register', {
       'username': username,
       'password': password,
       'name': name,
@@ -48,7 +48,7 @@ export class UserService {
       observe: 'response' as 'body'
     };
 
-    return this.http.get<HttpResponse<any>>('//localhost:8080/api/auth/login', headers)
+    return this.http.get<HttpResponse<any>>('http://sprawl.us-east-2.elasticbeanstalk.com/api/auth/login', headers)
       .map((resp: any): boolean => {
         if (resp.status === 200) {
           localStorage.setItem('auth_token', authHeader);

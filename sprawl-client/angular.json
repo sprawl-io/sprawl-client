@@ -23,8 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/font/customfonts.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true

@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class TaskService {
 
-  private tasksUrl = 'http://localhost:8080/api/task/';
+  private tasksUrl = 'http://sprawl.us-east-2.elasticbeanstalk.com/api/task/';
   readonly getTasksObservable: BehaviorSubject<Task[]>;
   readonly getParamTaskObservable: Map<string, BehaviorSubject<Task>>;
 
